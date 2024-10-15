@@ -42,12 +42,12 @@ Add-on based on the feedback:
 Comment: make sure to detail how you’ll handle any geographic alignment issues between the datasets—differences in coordinate systems or granularity can be tricky. Your use of linear regression and geospatial clustering methods makes sense, but consider mentioning advanced geospatial techniques like spatial autocorrelation for a more nuanced analysis. Validation using cross-validation and holding out city regions is a strong approach; just ensure the regions are representative of the city’s diversity.
 
 Take away:
-We need to have consistent geographic referencing within our dataset, especially the location-based tap water exposure data.
-We will have a primary dataset for the locations, and we will align any additional dataset to this primary dataset so the model is not confused
-I think categorizing the locations using zip code might be sufficient, but there will be some manual checking to see if that is a good option. Once we decide on how to categorize the locations, we can write a script to convert all the data to use the same form of location
-Incorporate spatial autocorrelation in our project
-Create a heat map or some sort of visualization to visualize tap water exposure and waterborne disease
-We will use Moran's I to identify any spatial clustering of cases
-Use Chi-square test of independence to verify that the distribution of different factors in our training, validation, and test sets matches the distribution in the full dataset.
-Account for the diversity in the dataset and see if they are being accurately represented in the dataset
+- We need to have consistent geographic referencing within our dataset, especially the location-based tap water exposure data.
+- We will have a primary dataset for the locations, and we will align any additional dataset to this primary dataset so the model is not confused
+    -  I think categorizing the locations using zip code might be sufficient, but there will be some manual checking to see if that is a good option. Once we decide on how to categorize the locations, we can write a script to convert all the data to use the same form of location
+- Incorporate spatial autocorrelation in our project
+  -  Create a heat map or some sort of visualization to visualize tap water exposure and waterborne disease
+  - We will use Moran's I to identify any spatial clustering of cases
+-  Use Chi-square test of independence to verify that the distribution of different factors in our training, validation, and test sets matches the distribution         in the full dataset.
+  -   Account for the diversity in the dataset and see if they are being accurately represented in the dataset
 
