@@ -14,8 +14,8 @@ This project aims to investigate the relationship between air quality and urban 
 
 Utilize two key datasets from NYC Open Data:
 
-1. **Air Quality Data**: Measurements of pollutants like NO2, SO2, PM2.5, and CO across NYC
-2. **2015 Street Tree Census**: Detailed information on over 680,000 trees in NYC, including species, size, and location
+1. **Air Quality Data**: Measurements of pollutants like NO2, SO2, PM2.5, and CO across NYC **[NYC OpenData Link] (https://data.cityofnewyork.us/Environment/2015-Street-Tree-Census-Tree-Data/uvpi-gqnh/about_data)**
+2. **2015 Street Tree Census**: Detailed information on over 680,000 trees in NYC, including species, size, and location **[NYC OpenData Link] (https://data.cityofnewyork.us/Environment/Air-Quality/c3uy-2p5r/about_data)**
 
 ## Methodology
 
