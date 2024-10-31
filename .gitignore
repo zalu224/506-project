@@ -1,0 +1,2 @@
+# everything in data file, except the directory itself
+data/*
