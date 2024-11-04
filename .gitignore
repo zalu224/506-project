@@ -1,2 +1,3 @@
 # everything in data file, except the directory itself
-data/*
+data/processed_data
+data/raw_data
