@@ -119,7 +119,7 @@ This project investigates the relationship between urban tree distribution and a
 ## Implementation and Documentation
 
 ### Project Structure
-### Project Structure
+```
 ├── data/
 │   ├── raw/                # Original datasets
 │   └── processed/          # Cleaned and processed data
@@ -131,6 +131,7 @@ This project investigates the relationship between urban tree distribution and a
 ├── tests/                  # Test files
 ├── requirements.txt        # Project dependencies
 └── README.md               # This file
+```
 
 ### Running the Code
 ```
