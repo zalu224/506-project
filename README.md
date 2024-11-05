@@ -1,52 +1,155 @@
-# Project Proposal: Air Quality and Urban Forestry in New York City
+# NYC Environmental Health: Impact of Urban Forestry on Air Quality
 
-## Overview
+[**Presentation Video Link**: TBD]
 
-This project aims to investigate the relationship between air quality and urban tree distribution in New York City. We will analyze data from the NYC Open Data platform and explore how tree placement correlates with air quality measurements across the city. Our findings would inform urban planning strategies, particularly in areas where increased tree planting might improve air quality.
+## Project Overview
+This project investigates the relationship between urban tree distribution and air quality metrics in New York City through comprehensive data analysis and visualization. By combining the 2015 Street Tree Census data with air quality measurements, we aim to understand how urban forestry impacts environmental health across different neighborhoods.
 
-## Objectives
+---
 
-1. Examine the relationship between air quality indicators and tree distribution in NYC
-2. Identify potential locations for tree planting based on air quality data and current tree coverage
-3. Assess the potential impact of urban forestry on local air quality
+## Current Progress and Results
 
-## Data Sources
+### Preliminary Visualizations
 
-Utilize two key datasets from NYC Open Data:
+#### 1. Tree Analysis Visualizations
 
-1. **Air Quality Data**: Measurements of pollutants like NO2, SO2, PM2.5, and CO across NYC **[NYC OpenData Link] (https://data.cityofnewyork.us/Environment/2015-Street-Tree-Census-Tree-Data/uvpi-gqnh/about_data)**
-2. **2015 Street Tree Census**: Detailed information on over 680,000 trees in NYC, including species, size, and location **[NYC OpenData Link] (https://data.cityofnewyork.us/Environment/Air-Quality/c3uy-2p5r/about_data)**
+- **Species Distribution Heat Map**
+  - Created an interactive heat map showing the top 10 tree species’ average diameter by borough.
+  - Color intensity represents diameter in inches.
+  - Allows for borough-by-borough comparison, revealing geographic patterns.
+  - Interactive tooltips display exact measurements.
 
-## Methodology
+- **Tree Health Analysis**
+  - Analyzed health distribution for living trees among the top 10 species.
+  - Bar charts compare health categories (Good, Fair, Poor).
+  - Identified species-specific health patterns.
+  - Geographic distribution of tree health status.
 
-### Data Preparation
-- Align geographic data between air quality and tree datasets
-- Address missing or incomplete data points
-- Standardize measurement units across datasets
+#### 2. Air Quality Visualizations
 
-### Key Features
-- Air quality metrics (e.g., pollutant concentrations)
-- Tree characteristics (species, health, size, density)
-- Geographic data (latitude, longitude)
+- **PM2.5 Temporal Analysis (2008-2022)**
+  - Line graph shows significant improvement in air quality over time.
+  - Tracks the top 5 worst-performing locations.
+  - Nearly 50% reduction in PM2.5 across all monitored areas, with seasonal variation patterns identified.
 
-### Visualization Techniques
-- Heat maps showing air quality and tree density
-- Scatter plots exploring relationships between variables
-- Bar charts comparing pollution levels in areas with varying tree coverage
+- **Geographic Distribution**
+  - Heat map showing pollution concentration by neighborhood.
+  - Upper Manhattan and Harlem identified as areas of concern, with notable pollution patterns in the Bronx.
+  - Includes ozone distribution analysis and cross-neighborhood comparison metrics.
 
-### Analysis Approach
+#### 3. Integrated Analysis Visualizations
 
-Employ several analytical methods:
-- Linear regression to explore correlations
-- Geospatial clustering to identify areas for potential tree planting
-- Machine learning models (e.g., decision trees) to predict air quality improvements based on tree-related factors
+- **Multi-pollutant Heatmap**
+  - X-axis: Pollutants (NO2, SO2, PM2.5); Y-axis: NYC neighborhoods.
+  - Color intensity indicates concentration levels, with a side color bar showing value ranges.
 
-### Validation
+- **Tree Health vs. Air Quality**
+  - Bar chart comparing PM2.5 levels across tree health categories.
+  - Error bars display confidence intervals, with statistical significance markers and sample size indicators.
 
-To ensure robust results, we'll:
-- Use cross-validation techniques
-- Hold out specific city regions as a test set for model validation
+---
 
-## Expected Outcomes
+## Data Processing Details
 
-This project aims to provide insights into the relationship between urban forestry and air quality in NYC. Our findings could support data-driven decisions about tree planting initiatives and their potential impact on local air quality.
+### 1. Data Collection
+
+- **Tree Data Source**
+  - NYC Open Data: 2015 Street Tree Census, with 666,134 individual trees.
+  - Includes complete species and health information.
+
+- **Air Quality Data Source**
+  - NYC Open Data: Historical air quality measurements from 2008-2022.
+  - Contains multiple pollutant measurements.
+
+- **Supporting Geographic Data**
+  - ZIP Code land areas (web-scraped from USA.com).
+  - UHF34 to ZIP code mapping tables and borough integration data.
+
+### 2. Data Cleaning and Processing
+
+- **Tree Data Processing**
+  - Filtered out invalid or incomplete records.
+  - Categorized tree status (Alive, Stump, Dead) and standardized location data.
+  - Extracted health indicators and calculated stewardship metrics.
+
+- **Air Quality Data Processing**
+  - Aligned temporal data with tree census, normalized geographically.
+  - Handled missing values and identified outliers.
+
+- **Geographic Integration**
+  - Normalized ZIP code area, matched UHF34 neighborhoods, and aggregated data at the borough level.
+  - Performed density calculations accounting for area size.
+
+---
+
+## Modeling Methods and Preliminary Results
+
+### 1. Statistical Analysis
+
+- **Linear Regression Model**
+  - Independent Variable: Tree Diameter (DBH).
+  - Dependent Variable: PM2.5 Concentrations.
+  - R-squared value: [Value], Confidence Intervals: [Range].
+  - Residual analysis details: [Results].
+
+### 2. Geographic Analysis
+- Identified clustering patterns in both tree and air quality datasets.
+- Created density maps for tree distribution and analyzed pollution concentration patterns.
+- Cross-referenced tree density with air quality metrics.
+
+---
+
+## Planned Next Steps
+
+### Further Analysis
+- **Deeper Statistical Modeling**
+  - Multiple regression and time series modeling.
+  - Explore machine learning approaches.
+
+- **Additional Data Integration**
+  - Incorporate demographic and socioeconomic data.
+  - Integrate historical weather data for enhanced analysis.
+
+- **Enhanced Visualization**
+  - Develop an interactive dashboard and time-series animations.
+  - Add 3D visualization for pollution patterns.
+
+---
+
+## Implementation and Documentation
+
+### Project Structure
+### Project Structure
+├── data/
+│   ├── raw/                # Original datasets
+│   └── processed/          # Cleaned and processed data
+├── notebooks/              # Jupyter notebooks for analysis
+├── src/                    # Source code
+│   ├── data_processing/    # Data cleaning scripts
+│   ├── analysis/           # Analysis modules
+│   └── visualization/      # Visualization code
+├── tests/                  # Test files
+├── requirements.txt        # Project dependencies
+└── README.md               # This file
+
+### Running the Code
+```
+# Clone the repository
+git clone [repository-url]
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the analysis
+python src/main.py
+```
+
+## Future Deliverables
+- Final statistical analysis and modeling.
+- Interactive visualization dashboard.
+- Policy recommendation document.
+- Cost-benefit analysis of urban forestry initiatives.
+
+## Acknowledgments
+- NYC Parks & Recreation
+- NYC Open Data
