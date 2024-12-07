@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NYC Trees Application</title>
+    
+    <!-- Link to static files -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    
+    <!-- Placeholder for map library CSS -->
+    <!-- <link rel="stylesheet" href=""> -->
+</head>
+<body>
+    <div class="container">
+        <h1>Map of NYC Trees</h1>
+        
+        <!-- Map container -->
+        <div id="map-container">
+            <!-- Map will be initialized here -->
+        </div>
+        
+        <!-- Control panel -->
+        <div class="control-panel">
+            <div class="form-group">
+                <label for="dataInput">Data Input:</label>
+                <input type="text" id="dataInput" placeholder="Enter data...">
+            </div>
+            
+            <button id="dataButton" class="button">Load Data</button>
+        </div>
+    </div>
+    
+    <!-- Load JavaScript -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    
+    <!-- Placeholder for map library JavaScript -->
+    <!-- <script src=""></script> -->
+</body>
+</html>

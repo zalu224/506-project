@@ -1,0 +1,22 @@
+# Flask and related packages
+Flask==3.0.0
+Flask-Cors==4.0.0
+Werkzeug==3.0.1
+
+# Data handling
+pandas==2.1.4
+numpy==1.26.2
+
+# Geospatial packages
+geopandas==0.14.1
+shapely==2.0.2
+
+# Environment and utils
+python-dotenv==1.0.0
+requests==2.31.0
+
+# WSGI server
+gunicorn==21.2.0
+
+# Testing
+pytest==7.4.3

@@ -1,3 +1,5 @@
-# everything in data file, except the directory itself
+# everything in data directory
 data/processed_data
 data/raw_data
+# flask-app cache
+flask-app/__pycache__

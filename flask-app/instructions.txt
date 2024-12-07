@@ -1,0 +1,4 @@
+# This is to track instructions
+0. go to flask app directory
+1. pip install -r requirement
+2. 
