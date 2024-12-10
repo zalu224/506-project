@@ -1,44 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NYC Street Tree Census Map</title>
-    
-    <!-- Leaflet CSS -->
+    <title>NYC Street Tree Census Heatmap (2015)</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
-    
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="static/style.css" />
 </head>
 <body>
     <div class="container">
-        <h1>NYC Street Tree Census Map (2015)</h1>
+        <h1>NYC Street Tree Census Heatmap (2015)</h1>
+
+        <div class="progress-display">
         
-        <!-- Map container -->
+        </div>
+        
         <div id="map"></div>
+
         
-        <!-- Control panel -->
         <div class="control-panel">
+            <div class="view-buttons">
+                <h2>Map Presets: </h2>
+                <button id="view1">1</button>
+                <button id="view2">2</button>
+                <button id="view3">3</button>
+                <button id="view4">4</button>
+                <button id="view5">5</button>
+            </div>
             <div class="form-group">
-                <label for="searchInput">Search Location:</label>
-                <input type="text" id="searchInput" placeholder="Enter NYC address...">
+                <div class="label-value">
+                    <label for="radius">Radius:</label>
+                    <label id="radiusValue">6</label>
+                </div>
+                <input type="range" id="radius" min="1" max="25" value="10" step="0.5" class="slider">
             </div>
             
-            <button id="refreshButton" class="button">Refresh Data</button>
+            <div class="form-group">
+                <div class="label-value">
+                    <label for="blur">Blur:</label>
+                    <label id="blurValue">7</label>
+                </div>
+                <input type="range" id="blur" min="1" max="25" value="10" step="0.5" class="slider">
+            </div>
+
+            <div class="form-group">
+                <div class="label-value">
+                    <label for="maxZ">Max Zoom</label>
+                    <label id="maxZoom">0.05</label>
+                </div>
+                <input type="range" id="maxZ" min="0" max="20.0" value="0.5" step="1" class="slider">
+            </div>
             
-            <!-- Loading status and progress will be inserted here -->
+            <div class="form-group">
+                <div class="label-value">
+                    <label for="max">Maximum Intensity:</label>
+                    <label id="maxValue">0.75</;>
+                </div>
+                <input type="range" id="max" min="0" max="40.0" value="1.0" step="0.5" class="slider">
+            </div>
+            
+            <div class="form-group">
+                <div class="label-value">
+                    <label for="minOpacity">Minimum Opacity:</label>
+                    <label id="minOpacityValue">0.2</label>
+                </div>
+                <input type="range" id="minOpacity" min="0" max="1.0" value="0.05" step="0.05" class="slider">
+            </div>
         </div>
     </div>
-    
-    <!-- Leaflet JS -->
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
-    <!-- Pixi.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.3.2/pixi.min.js"></script>
-    <!-- Leaflet.PixiOverlay -->
-    <script src="https://cdn.jsdelivr.net/npm/leaflet-pixi-overlay@1.9.4/L.PixiOverlay.min.js"></script>
-    
-    <!-- Custom JavaScript -->
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.heat/0.2.0/leaflet-heat.js"></script>
+    <script src="static/script.js"></script>
 </body>
 </html>

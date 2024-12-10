@@ -11,7 +11,7 @@ logger = logging.getLogger(__name__)
 app = Flask(__name__)
 CORS(app)
 
-# Global variable to store the minimized tree data
+# Global variable to store the tree data
 tree_locations = None
 
 def initialize_tree_data():
@@ -30,17 +30,23 @@ def initialize_tree_data():
             logger.error(f"File not found at: {abs_path}")
             return False
             
-        # Read only necessary columns
+        # Read only necessary columns and filter for living trees
         logger.info("Reading CSV file...")
         df = pd.read_csv(file_path, 
-                        usecols=['latitude', 'longitude', 'status'])
+                        usecols=['latitude', 'longitude', 'status', 'tree_dbh'])
         
         # Filter for living trees and valid coordinates
         logger.info("Filtering data...")
         df = df[df['status'] == 'Alive'].dropna(subset=['latitude', 'longitude'])
         
-        # Convert to simple list of coordinate pairs for efficiency
-        tree_locations = df[['latitude', 'longitude']].values.tolist()
+        # Normalize tree_dbh to use as intensity (0.3 to 1.0 range)
+        if 'tree_dbh' in df.columns:
+            df['intensity'] = 0.3 + (df['tree_dbh'] / df['tree_dbh'].max() * 0.7)
+        else:
+            df['intensity'] = 0.5  # Default intensity if no DBH data
+
+        # Convert to list of [lat, lng, intensity]
+        tree_locations = df[['latitude', 'longitude', 'intensity']].values.tolist()
         
         logger.info(f"Successfully loaded {len(tree_locations)} tree locations")
         return True
@@ -84,7 +90,7 @@ def get_data_info():
     
     return jsonify({
         'totalTrees': len(tree_locations),
-        'totalChunks': (len(tree_locations) + 9999) // 10000  # Round up division by chunk_size
+        'totalChunks': (len(tree_locations) + 49999) // 50000  # Round up division by chunk_size
     })
 
 if __name__ == '__main__':
