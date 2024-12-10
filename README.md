@@ -6,6 +6,60 @@
 This project investigates the relationship between urban tree distribution and air quality metrics in New York City through comprehensive data analysis and visualization. By combining the 2015 Street Tree Census data with air quality measurements, we aim to understand how urban forestry impacts environmental health across different neighborhoods.
 
 ---
+# Data Processing for NYC Trees and Air Quality Analysis
+
+This project provides a Python class `DataProcessor` to preprocess and validate datasets related to NYC Trees and Air Quality. The script ensures data is clean, consistent, and ready for analysis or modeling.
+
+---
+
+## Features
+
+### 1. Data Loading
+The `load_data` method loads raw data from CSV files into pandas DataFrames.
+- **Tree Census Data**: Information on tree species, health, status, diameter, and geographic location.
+- **Air Quality Data**: Contains air quality measurements, start dates, and locations.
+
+### 2. Tree Census Data Cleaning (`clean_tree_data`)
+- Removes duplicate records based on `tree_id`.
+- Fills missing `tree_dbh` (tree diameter) values with the median value grouped by tree species (`spc_common`).
+- Filters out non-living trees (keeps `status == 'Alive'`).
+- Converts `latitude` and `longitude` to numeric types.
+- Encodes categorical columns (`health`, `spc_common`, `steward`, `guards`, `sidewalk`) using `LabelEncoder`.
+- Maps tree health values (`Poor`, `Fair`, `Good`) to numerical scores (`1`, `2`, `3`).
+
+### 3. Air Quality Data Cleaning (`clean_air_quality_data`)
+- Removes duplicate records.
+- Converts the `start_date` column to a datetime format.
+- Ensures `data_value` (air quality metric) is numeric, handling invalid entries.
+- Adds a `season` column based on the quarter of the year derived from `start_date`.
+
+### 4. Data Validation (`validate_data`)
+Checks the consistency and completeness of the cleaned data. Outputs include:
+- Total record counts.
+- Missing values summary for each column.
+- Numeric value ranges for critical fields:
+  - **Tree Data**: `tree_dbh`, `latitude`, `longitude`.
+  - **Air Quality Data**: `data_value`.
+
+### 5. Saving Processed Data (`save_processed_data`)
+The `save_processed_data` method saves:
+- **Processed Data**: Cleaned tree census and air quality data as `.pkl` files.
+- **Encoders**: Label encoders for categorical features.
+- **Validation Results**: Quality checks in a dictionary.
+- **File Names**: All files are timestamped for versioning (e.g., `tree_data_YYYYMMDD_HHMMSS.pkl`).
+
+Files are stored in the `processed_data` directory.
+
+---
+
+## Directory Structure
+The script creates the following directories if they don't exist:
+- `raw_data`: For input raw data files (e.g., CSVs).
+- `processed_data`: For cleaned datasets and metadata.
+- `log`: For logs tracking data processing and errors.
+
+---
+
 
 ## Current Progress and Results
 
