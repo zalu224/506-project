@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "leaflet-pixi-overlay": "^1.9.4"
+  }
+}

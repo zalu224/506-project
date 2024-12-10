@@ -3,3 +3,5 @@ data/processed_data
 data/raw_data
 # flask-app cache
 flask-app/__pycache__
+# node_modules
+node_modules
