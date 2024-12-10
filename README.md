@@ -104,7 +104,13 @@ The script creates the following directories if they don't exist:
 ---
 
 ## Data Processing Details
----
+
+## Data relevance and provenance
+
+We are working with two datasets that complements each other. The combination of these datasets allowed the project to answer important about how trees affect air quality in different parts of the city. We were able to create the interactive map that help us discover patterns in different locations. 
+
+To enhance the quality of the data, we standardized the measurement unit across both datasets, we aligned the geographic coordinates so the datasets can be expressed correctly on map. In addition, we did manual checks and ran tests on both data sets to validate the data and make sure it is consistent. Although the data had its limitation such as its year range differences and using different units for locations, we tried to overcome those by matching those datasets and draw those connections ourselves.
+
 ## Data Preprocessing for Visualizing
 
 The data preprocessing in this project involves integrating and preparing datasets to analyze the impact of tree dimensions on air quality metrics. Below are the detailed steps:
@@ -126,7 +132,7 @@ The data preprocessing in this project involves integrating and preparing datase
 
 6. **Threshold Analysis**:
    - An incremental method is used to identify thresholds in tree diameter where the contribution to air quality changes from negative to positive. This involves repeated regression calculations with filtered subsets of data.
-
+---
 ### Tools and Methods
 - **Libraries**: The preprocessing and analysis are conducted using Python libraries such as `pandas`, `numpy`, and `scipy`.
 - **Visualization**: Scatter plots and regression lines are generated with `matplotlib` to provide visual insights into the data trends.
