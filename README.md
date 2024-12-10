@@ -104,7 +104,32 @@ The script creates the following directories if they don't exist:
 ---
 
 ## Data Processing Details
+---
+## Data Preprocessing for Visualizing
 
+The data preprocessing in this project involves integrating and preparing datasets to analyze the impact of tree dimensions on air quality metrics. Below are the detailed steps:
+
+1. **Merging Datasets**:
+   - Air quality data and tree census data are merged into a unified dataset for joint analysis.
+
+2. **Filtering**:
+   - The dataset is filtered to include only tree diameters (`tree_dbh`) below 100 inches. This step reduces noise and focuses on the most relevant observations.
+
+3. **Feature Engineering**:
+   - Additional features, such as `tree_area`, are computed using geometric formulas. This helps to evaluate the relationship between tree size and air quality metrics.
+
+4. **Group Aggregation**:
+   - Average air quality values are calculated for each unique tree diameter to provide a simplified view for regression analysis.
+
+5. **Dimensional Reduction (Regression Application)**:
+   - Linear regression is applied to explore the relationship between tree diameter and average air quality. The outputs include slope, intercept, p-value, and R-squared value.
+
+6. **Threshold Analysis**:
+   - An incremental method is used to identify thresholds in tree diameter where the contribution to air quality changes from negative to positive. This involves repeated regression calculations with filtered subsets of data.
+
+### Tools and Methods
+- **Libraries**: The preprocessing and analysis are conducted using Python libraries such as `pandas`, `numpy`, and `scipy`.
+- **Visualization**: Scatter plots and regression lines are generated with `matplotlib` to provide visual insights into the data trends.
 ### 1. Data Collection
 
 - **Tree Data Source**
