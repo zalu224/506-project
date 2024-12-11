@@ -107,13 +107,16 @@ project/
 ├── data/
 │   ├── raw/                # Original datasets
 │   └── processed/          # Cleaned data
+├── docs/                   # Files that describe the technical details of the project
 ├── notebooks/              # Analysis notebooks
 ├── src/                    # Source code
 │   ├── data_processing/    
 │   ├── analysis/          
 │   └── visualization/      
 ├── tests/                  # Test files
-├── requirements.txt        # Dependencies
+├── heatmap-flask-app/      # Flask application files
+├── .gitignore
+├── data.zip                # All necessary data files
 └── README.md              
 ```
 
