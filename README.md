@@ -8,6 +8,7 @@
 - [Data Sources & Processing](#data-sources--processing)
 - [Analysis & Visualizations](#analysis--visualizations)
 - [Implementation](#implementation)
+- [Interactive Web Applications](#interactive-web-applications)
 - [Results & Conclusions](#results--conclusions)
 - [Future Work](#future-work)
 - [Acknowledgments](#acknowledgments)
@@ -136,6 +137,31 @@ python src/main.py
 - folium
 - scikit-learn
 
+## Interactive Web Applications
+
+The project includes two Flask applications for data visualization and exploration.
+
+### Data Exploration Application
+```bash
+cd data-exploration-flask-app
+pip install -r requirements.txt
+python app.py
+```
+Access the application at `http://localhost:5000`
+
+### Heatmap Visualization Application
+```bash
+cd heatmap-flask-app
+pip install -r requirements.txt
+python app.py
+```
+Access the application at `http://localhost:5001`
+
+### Requirements
+- Flask 2.0+
+- Python 3.8+
+- Processed datasets in respective `data` directories
+
 ## Results & Conclusions (Placeholder)
 
 ### Major Findings
@@ -157,7 +183,6 @@ python src/main.py
 ### Limitations
 - Time gap between tree census and air quality data
 - Geographic resolution differences
-- Seasonal data variations
 
 ## Acknowledgments
 - NYC Parks & Recreation
