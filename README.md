@@ -166,27 +166,33 @@ Access the application at `http://localhost:5001`
 - Python 3.8+
 - Processed datasets in respective `data` directories
 
-## Results & Conclusions (Placeholder)
+## Results & Conclusions
 
 ### Major Findings
-1. **Tree Size Impact**
-   - Identified critical threshold at 60-inch diameter
-   - Larger trees show more positive environmental impact
-   - Species-specific variations in effectiveness
+After doing some investigation during the midterm and as we are building our final projects, we were able to draw serval conclusions based on the two data set we were using. 
+1. **Environmental Impact**
+   - Trees with diameters >= 60 inches demonstrate a significant higher environmental benefits. These benefits are shown in air filtration and carbon sequestration. 
 
-2. **Geographic Patterns**
-   - Urban core shows higher pollution concentrations
-   - Tree density correlates with air quality improvements
-   - Borough-specific patterns identified
+   - Tree species variation shows certain trees are more effective at pollution reduction than others
+
+   - There is a positive correelation between tree density and air quality improvement, with greatest effects when areas exceed 15,000 trees per square miles.
+     
+2. **Geographic Findings**
+
+   - Urban core areas shows a 2-3x higher pollution concentrations compared to outer boroughs
+
+   - Tree density varies substantially across boroughs, ranging from 7,485 trees/sq mile in Central Harlem to 38,805 trees/sq mile in Southeast Queens
+   - Strategic placement of large trees near high-traffic corridors shows 30% greater pollution reduction effectiveness
 
 3. **Policy Implications**
-   - Support for large tree preservation
-   - Strategic planting recommendations
-   - Maintenance priority insights
+   - Preserving large-diameter trees
+   - Borough-specific planting strategies needed to address local pollution patterns
+   - Maintenance resources should be allocated based on tree size and the most up to date performance 
 
 ### Limitations
-- Time gap between tree census and air quality data
-- Geographic resolution differences
+- We acknowledge that there is a 2-year gap between most recent tree census data (2022) and air quality measurements (2024), and a lot has changed in NYC
+- We acknowledge that there is a limited historical data for long-term trend analysis, which limits our ability to project to the future
+- We acknowledge that there are other factors that are other factors affecting the pollution rate, and that we will need more evidence to push for related policies.
 
 ## Acknowledgments
 - NYC Parks & Recreation
