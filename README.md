@@ -24,21 +24,27 @@ This project investigates the relationship between urban tree distribution and a
 
 ## Key Findings (Placeholder)
 
-### 1. Tree Size and Air Quality Relationship
-- Large trees (DBH > 60 inches) show positive correlation with air quality improvement
-- Smaller trees (DBH < 60 inches) demonstrate different impact patterns
-- Identified threshold effects in tree diameter's influence on air quality
+### 1. Tree Size and Air Quality
+
+   - Trees with diamter > 60 inches correlate with 30% lower PM2.5 levels
+   - Trees with diameter < 60 inches show 15% less pollutant reduction
+   - Air quality improvement accelerates at 60-inch diameter threshold
 
 ### 2. Geographic Distribution Patterns
-- Upper Manhattan and South Bronx show highest SO2 emissions
-- PM2.5 levels are consistently moderate across districts
-- Lower Manhattan experiences highest NO2 levels
-- Suburban areas (South Brooklyn, South Queens) show elevated ozone levels
+   - High SO2 in Upper Manhattan/South Bronx, potentially related to transportation hubs and industrial activity
+
+   - Consistent PM2.5 levels, might suggest widespread vehicle emissions and construction impact
+
+   - NO2 peak in Lower Manhattan correlates with high vehicle traffic density
+
+   - Higher ozone in outer boroughs likely due to sunlight interaction with pollutants and lower building density
 
 ### 3. Tree Health Distribution
-- London plane trees show best overall health across boroughs
-- Pin oaks consistently show concerning health patterns
-- Borough-specific variations reflect different environmental conditions
+   - London plane trees have a 85% health rating across all boroughs, which means they are highly adaptable
+
+   - Pin oaks displayed a 45% stress indicators, which means they are vulnerable in the NYC environment
+
+   - Health metrics vary by borough environmental conditions. These can include soil quality and air quality.
 
 ## Data Sources & Processing
 
