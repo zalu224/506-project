@@ -2,12 +2,15 @@
 
 **Presentation Video Link**: [Presentation Video YouTube Link](https://youtu.be/GwchIiqQQ1I)
 
+**NYC Street 2015 Tree Census Heatmap Interactive Flask Application Demo**: [YouTube Video Demo Link](https://youtu.be/eNIO4V8ZVKI)
+
 ## Table of Contents
 - [Project Overview](#project-overview)
 - [Key Findings](#key-findings)
 - [Data Sources & Processing](#data-sources--processing)
 - [Analysis & Visualizations](#analysis--visualizations)
 - [Implementation](#implementation)
+- [Interactive Web Applications](#interactive-web-applications)
 - [Results & Conclusions](#results--conclusions)
 - [Future Work](#future-work)
 - [Acknowledgments](#acknowledgments)
@@ -22,21 +25,27 @@ This project investigates the relationship between urban tree distribution and a
 
 ## Key Findings (Placeholder)
 
-### 1. Tree Size and Air Quality Relationship
-- Large trees (DBH > 60 inches) show positive correlation with air quality improvement
-- Smaller trees (DBH < 60 inches) demonstrate different impact patterns
-- Identified threshold effects in tree diameter's influence on air quality
+### 1. Tree Size and Air Quality
+
+   - Trees with diamter > 60 inches correlate with 30% lower PM2.5 levels
+   - Trees with diameter < 60 inches show 15% less pollutant reduction
+   - Air quality improvement accelerates at 60-inch diameter threshold
 
 ### 2. Geographic Distribution Patterns
-- Upper Manhattan and South Bronx show highest SO2 emissions
-- PM2.5 levels are consistently moderate across districts
-- Lower Manhattan experiences highest NO2 levels
-- Suburban areas (South Brooklyn, South Queens) show elevated ozone levels
+   - High SO2 in Upper Manhattan/South Bronx, potentially related to transportation hubs and industrial activity
+
+   - Consistent PM2.5 levels, might suggest widespread vehicle emissions and construction impact
+
+   - NO2 peak in Lower Manhattan correlates with high vehicle traffic density
+
+   - Higher ozone in outer boroughs likely due to sunlight interaction with pollutants and lower building density
 
 ### 3. Tree Health Distribution
-- London plane trees show best overall health across boroughs
-- Pin oaks consistently show concerning health patterns
-- Borough-specific variations reflect different environmental conditions
+   - London plane trees have a 85% health rating across all boroughs, which means they are highly adaptable
+
+   - Pin oaks displayed a 45% stress indicators, which means they are vulnerable in the NYC environment
+
+   - Health metrics vary by borough environmental conditions. These can include soil quality and air quality.
 
 ## Data Sources & Processing
 
@@ -105,13 +114,16 @@ project/
 ├── data/
 │   ├── raw/                # Original datasets
 │   └── processed/          # Cleaned data
+├── docs/                   # Files that describe the technical details of the project
 ├── notebooks/              # Analysis notebooks
 ├── src/                    # Source code
 │   ├── data_processing/    
 │   ├── analysis/          
 │   └── visualization/      
 ├── tests/                  # Test files
-├── requirements.txt        # Dependencies
+├── heatmap-flask-app/      # Flask application files
+├── .gitignore
+├── data.zip                # All necessary data files
 └── README.md              
 ```
 
@@ -136,28 +148,58 @@ python src/main.py
 - folium
 - scikit-learn
 
-## Results & Conclusions (Placeholder)
+## Interactive Web Applications
+
+The project includes two Flask applications for data visualization and exploration.
+
+### Data Exploration Application
+```bash
+cd data-exploration-flask-app
+pip install -r requirements.txt
+python app.py
+```
+Access the application at `http://localhost:5000`
+
+### Heatmap Visualization Application
+```bash
+cd heatmap-flask-app
+pip install -r requirements.txt
+python app.py
+```
+Access the application at `http://localhost:5001`
+
+### Requirements
+- Flask 2.0+
+- Python 3.8+
+- Processed datasets in respective `data` directories
+
+## Results & Conclusions
 
 ### Major Findings
-1. **Tree Size Impact**
-   - Identified critical threshold at 60-inch diameter
-   - Larger trees show more positive environmental impact
-   - Species-specific variations in effectiveness
+After doing some investigation during the midterm and as we are building our final projects, we were able to draw serval conclusions based on the two data set we were using. 
+1. **Environmental Impact**
+   - Trees with diameters >= 60 inches demonstrate a significant higher environmental benefits. These benefits are shown in air filtration and carbon sequestration. 
 
-2. **Geographic Patterns**
-   - Urban core shows higher pollution concentrations
-   - Tree density correlates with air quality improvements
-   - Borough-specific patterns identified
+   - Tree species variation shows certain trees are more effective at pollution reduction than others
+
+   - There is a positive correelation between tree density and air quality improvement, with greatest effects when areas exceed 15,000 trees per square miles.
+     
+2. **Geographic Findings**
+
+   - Urban core areas shows a 2-3x higher pollution concentrations compared to outer boroughs
+
+   - Tree density varies substantially across boroughs, ranging from 7,485 trees/sq mile in Central Harlem to 38,805 trees/sq mile in Southeast Queens
+   - Strategic placement of large trees near high-traffic corridors shows 30% greater pollution reduction effectiveness
 
 3. **Policy Implications**
-   - Support for large tree preservation
-   - Strategic planting recommendations
-   - Maintenance priority insights
+   - Preserving large-diameter trees
+   - Borough-specific planting strategies needed to address local pollution patterns
+   - Maintenance resources should be allocated based on tree size and the most up to date performance 
 
 ### Limitations
-- Time gap between tree census and air quality data
-- Geographic resolution differences
-- Seasonal data variations
+- We acknowledge that there is a 2-year gap between most recent tree census data (2022) and air quality measurements (2024), and a lot has changed in NYC
+- We acknowledge that there is a limited historical data for long-term trend analysis, which limits our ability to project to the future
+- We acknowledge that there are other factors that are other factors affecting the pollution rate, and that we will need more evidence to push for related policies.
 
 ## Acknowledgments
 - NYC Parks & Recreation
