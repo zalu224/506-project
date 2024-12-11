@@ -4,6 +4,8 @@
 
 **NYC Street 2015 Tree Census Heatmap Interactive Flask Application Demo**: [YouTube Video Demo Link](https://youtu.be/eNIO4V8ZVKI)
 
+**Updated Demo for Tree Census Heatmap with Tree Health Distribution**: [YouTube Video Demo Link](https://youtu.be/pgMsebsvFAI)
+
 ## Table of Contents
 - [Project Overview](#project-overview)
 - [Key Findings](#key-findings)
